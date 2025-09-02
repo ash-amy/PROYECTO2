@@ -9,7 +9,7 @@
 }
 
 .navbar-brand {
-  font-family: var(--Título);
+  font-family: var(--titulo);
   font-size: 50px;
 }
 
@@ -17,6 +17,6 @@
   margin: 3px;
   display: flex;
   justify-content: flex-end;
-  font-family: var(--Subtítulo);
-  font-size: 20px;
+  font-family: var(--subtitulo);
+  font-size: 25px;
 }

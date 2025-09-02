@@ -1,6 +1,13 @@
 footer {
   background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
-  padding: 20px;
+  padding: 10px;
+}
+
+.nombre {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-family: var(--subtitulo);
 }
 
 .icons {
@@ -21,6 +28,7 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin: 5px;
 }
 
 footer img {

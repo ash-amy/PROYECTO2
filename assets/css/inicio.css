@@ -30,11 +30,11 @@ section {
 }
 
 .bienvenida h2 {
-  font-family: var(--Subtítulo);
+  font-family: var(--subtitulo);
   font-size: 30px;
 }
 
 .bienvenida p {
-  font-family: var(--Párrafos);
+  font-family: var(--parrafos);
   font-size: 20px;
 }
