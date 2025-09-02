@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--color-3);
+  background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
   display: flex;
   justify-content: space-between;
 }
