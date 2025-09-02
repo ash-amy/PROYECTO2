@@ -1,6 +1,10 @@
 footer {
   background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
   padding: 10px;
+  margin: 0;
+  justify-content: center;
+  margin: auto;
+  color: grey;
 }
 
 .nombre {
@@ -8,11 +12,14 @@ footer {
   justify-content: center;
   margin: auto;
   font-family: var(--subtitulo);
+  font-size: 27px;
+  margin: 2px;
+  height: 30px;
 }
 
 .icons {
   width: 100px;
-  margin: 5px auto;
+  margin: 2px auto;
   display: flex;
   justify-content: center;
 }
@@ -21,14 +28,16 @@ footer {
   display: flex;
   justify-content: space-around;
   margin: 10px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .author p {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 5px;
+  margin: 3px;
+  font-family: var(--parrafos);
+  font-size: 13px;
 }
 
 footer img {
