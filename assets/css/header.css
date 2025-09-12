@@ -25,4 +25,12 @@
   justify-content: flex-end;
   font-family: var(--subtitulo);
   font-size: 25px;
+  color: black;
+  border-radius: 200px;
+}
+
+.navbar .nav-link.option:hover {
+  transform: scale(1.05);
+  color: black !important; /* asegúrate que sobrescriba bootstrap */
+  background-color: rgba(255, 255, 255, 0.2);
 }
