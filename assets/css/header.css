@@ -1,5 +1,11 @@
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .header {
-  background-color: var(--color-3);
+  background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
   display: flex;
   justify-content: space-between;
 }
@@ -9,7 +15,7 @@
 }
 
 .navbar-brand {
-  font-family: var(--Título);
+  font-family: var(--titulo);
   font-size: 50px;
 }
 
@@ -17,6 +23,6 @@
   margin: 3px;
   display: flex;
   justify-content: flex-end;
-  font-family: var(--Subtítulo);
-  font-size: 20px;
+  font-family: var(--subtitulo);
+  font-size: 25px;
 }
