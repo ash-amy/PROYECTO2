@@ -1,18 +1,24 @@
+/* 🎨 VARIABLES DE COLOR */
 :root {
   --azul-cielo: #4db6e2;
   --amarillo: #ffd93b;
   --verde-lima: #8bc34a;
   --coral: #ff6f61;
   --gris-claro: #f5f5f5;
+  --blanco: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.15);
 }
 
+/* 🌎 ESTILOS GENERALES */
 body {
-  background: var(--coral);
+  background-color: var(--gris-claro);
   min-height: 100vh;
   margin: 0;
-  background-color: var(--gris-claro);
+  font-family: Arial, sans-serif;
+  color: #333;
 }
-/*Animacion de los titulos*/
+
+/* 🔤 ANIMACIÓN TITULOS */
 @keyframes salto {
   0%,
   100% {
@@ -23,90 +29,97 @@ body {
   }
 }
 
+/* 📌 ENCABEZADO */
+.contenedor-textos {
+  background: linear-gradient(
+    135deg,
+    var(--azul-cielo),
+    var(--amarillo),
+    var(--verde-lima),
+    var(--coral)
+  );
+  padding: 2rem;
+  border-radius: 15px;
+  color: var(--blanco);
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--sombra);
+}
+
 .contenedor-textos h1,
 .contenedor-textos h2 {
-  animation: salto 1s ease-in-out infinite;
-  font-family: var(--Título);
+  margin: 0.5rem 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 }
-/*contenedores*/
-.contenedor-textos {
-  text-align: center;
-  padding: 50px 20px 30px;
-  background-color: var(--gris-claro);
-  color: var(--amarillo);
-  border-radius: 12px;
-  max-width: 700px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ff6f61;
+
+.contenedor-textos h1:hover,
+.contenedor-textos h2:hover {
+  animation: salto 1s ease-in-out infinite;
 }
 
 .contenedor-textos h1 {
   font-weight: 700;
-  font-size: 4rem;
-  margin-bottom: 0.3em;
+  font-size: 3rem;
   line-height: 1.2;
 }
 
 .contenedor-textos h2 {
   font-weight: 600;
-  font-size: 1.8rem;
-  color: var(--verde-lima);
-  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--blanco);
   line-height: 1.3;
 }
+
+/* 🖼️ GALERÍA */
 .galeria-flex {
-  font-family: var(--Párafos);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 60px;
-  padding: 0 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 20px;
 }
 
-.imagen {
-  flex: 1 1 calc(33.333% - 40px);
-  background-color: white;
-  max-width: 300px;
-  padding: 10px;
-  border: 3px solid var(--verde-lima);
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.galeria-flex .imagen {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--sombra);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
+  height: 280px;
+  padding: 10px;
+  border: 3px solid transparent;
 }
 
-.imagen img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
+.galeria-flex .imagen img {
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-.imagen:hover {
-  transform: translateY(-10px) scale(1.05);
+.galeria-flex .imagen:hover {
+  transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-color: var(--coral);
 }
-.imagen p {
-  position: relative;
-  display: inline-block;
+
+/* Texto dentro de tarjeta */
+.galeria-flex .imagen p {
   margin-top: 10px;
-  color: var(--azul-cielo);
-  font-weight: 700;
-  text-align: center;
+  font-weight: bold;
   font-size: 1.1rem;
+  color: var(--azul-cielo);
+  position: relative;
   cursor: pointer;
 }
 
-.imagen p::after {
+.galeria-flex .imagen p::after {
   content: "";
   position: absolute;
   left: 0;
@@ -120,82 +133,62 @@ body {
   border-radius: 2px;
 }
 
-.imagen p:hover::after {
+.galeria-flex .imagen p:hover::after {
   transform: scaleX(1);
 }
 
-@media (max-width: 600px) {
-  .contenedor-textos {
-    padding: 20px 15px;
-    margin-top: 100px;
-    max-width: 90%;
-    border-radius: 10px;
-  }
-
-  .contenedor-textos h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5em;
-  }
-
-  .contenedor-textos h2 {
-    font-size: 1.1rem;
-  }
-
-  .imagen {
-    max-width: 90%;
-    padding: 8px;
-  }
-
-  .imagen img {
-    height: 130px;
-  }
-
-  .imagen p {
-    font-size: 1rem;
-  }
-  .galeria-flex {
-    gap: 20px;
-  }
-}
-
+/* 🎨 COLORES BORDES TARJETAS */
 .imagen:nth-child(1) {
-  border-color: #ff6f61;
+  border-color: var(--coral);
 }
 .imagen:nth-child(1):hover {
-  border-color: #4db6e2;
+  border-color: var(--azul-cielo);
 }
 
 .imagen:nth-child(2) {
-  border-color: #ffd93b;
+  border-color: var(--amarillo);
 }
 .imagen:nth-child(2):hover {
-  border-color: #8bc34a;
+  border-color: var(--verde-lima);
 }
 
 .imagen:nth-child(3) {
-  border-color: #8bc34a;
+  border-color: var(--verde-lima);
 }
 .imagen:nth-child(3):hover {
-  border-color: #ff6f61;
+  border-color: var(--coral);
 }
 
 .imagen:nth-child(4) {
-  border-color: #4db6e2;
+  border-color: var(--azul-cielo);
 }
 .imagen:nth-child(4):hover {
-  border-color: #ffd93b;
+  border-color: var(--amarillo);
 }
 
 .imagen:nth-child(5) {
-  border-color: #ffd93b;
+  border-color: var(--amarillo);
 }
 .imagen:nth-child(5):hover {
-  border-color: #4db6e2;
+  border-color: var(--azul-cielo);
 }
 
 .imagen:nth-child(6) {
-  border-color: #8bc34a;
+  border-color: var(--verde-lima);
 }
 .imagen:nth-child(6):hover {
-  border-color: #ff6f61;
+  border-color: var(--coral);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .galeria-flex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-flex {
+    grid-template-columns: 1fr;
+  }
 }
