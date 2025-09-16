@@ -10,7 +10,7 @@ body {
   background: var(--coral);
   min-height: 100vh;
   margin: 0;
-  background-color: var(--gris-claro);
+  background-image: url(../img/Fondo1.jpg);
 }
 /*Animacion de los titulos*/
 @keyframes salto {
