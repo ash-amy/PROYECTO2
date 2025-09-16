@@ -14,6 +14,7 @@ body {
   background-color: var(--gris-claro);
   min-height: 100vh;
   margin: 0;
+  background-image: url(../img/Fondo1.jpg);
   font-family: Arial, sans-serif;
   color: #333;
 }
