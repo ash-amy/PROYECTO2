@@ -68,13 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mostrar una pregunta
   function mostrarPregunta() {
-    let q = preguntas[currentQuestion];
+    let i = preguntas[currentQuestion];
     quizDiv.innerHTML = `
       <div class="pregunta">
-        <p>${q.texto}</p>
-        ${q.opciones.map(
+        <p>${i.texto}</p>
+        ${i.opciones.map(
           (op, i) =>
-            `<label><input type="radio" name="respuesta" value="${op.valor}"> ${op.texto}</label>`
+            `
+              <label>
+                <input type="radio" name="respuesta" value="${op.valor}">
+                ${op.texto}
+              </label>`
         ).join("")}
       </div>
     `;

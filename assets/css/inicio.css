@@ -1,5 +1,9 @@
 body {
   background-image: url(../img/Fondo1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .niños-programación {
@@ -54,17 +58,30 @@ body {
   border-radius: 10px;
 }
 
+.form {
+  background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin: 20px auto;
+  width: 615px;
+  height: 535px;
+}
+
 .quiz-container {
   background: #fff;
   border-radius: 12px;
   padding: 30px;
   max-width: 600px;
+  max-height: 520px;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 10px;
 }
 
-h1 {
+.form h1 {
   color: #333;
 }
 
@@ -79,7 +96,7 @@ h1 {
 #progress-bar {
   height: 100%;
   width: 0;
-  background: #4CAF50;
+  background: linear-gradient(135deg, #4db6e2 0%, #ffd93b 50%, #ff6f61 100%);
   border-radius: 6px;
   transition: width 0.4s ease;
 }
@@ -93,7 +110,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-label {
+.form label {
   display: block;
   margin: 8px 0;
   padding: 10px;
@@ -104,30 +121,29 @@ label {
   transition: 0.3s;
 }
 
-label:hover {
+.form label:hover {
   background: #eef9f0;
-  border-color: #4CAF50;
+  border-color: #ff6f61;
 }
 
-input[type="radio"] {
+.form input[type="radio"] {
   margin-right: 8px;
 }
 
-button {
+.form button {
   margin-top: 20px;
   padding: 14px;
   width: 100%;
-  background: #4CAF50;
-  color: #fff;
-  font-size: 16px;
+  background: linear-gradient(135deg, #4db6e2 25%, #9cd2eb 50%, #4db6e2 100%);
+  color: #000000;
+  font-size: 18px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  background: #45a049;
+.form button:hover {
+  background: #58b0d6;
 }
 
 #resultado {
@@ -135,7 +151,7 @@ button:hover {
   padding: 20px;
   border-radius: 12px;
   background: #e9f5ec;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 #resultado h2 {
