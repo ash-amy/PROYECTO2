@@ -66,26 +66,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  // Mostrar una pregunta
-  function mostrarPregunta() {
-    let i = preguntas[currentQuestion];
-    quizDiv.innerHTML = `
-      <div class="pregunta">
-        <p>${i.texto}</p>
-        ${i.opciones.map(
-          (op, i) =>
-            `
-              <label>
-                <input type="radio" name="respuesta" value="${op.valor}">
-                ${op.texto}
-              </label>`
-        ).join("")}
-      </div>
-    `;
-    nextBtn.classList.add("oculto");
-  }
+  // clases de color para cada opción
+const colorClasses = ["rojo", "verde", "amarillo"];
 
-  // Mostrar resultado
+function mostrarPregunta() {
+  const pregunta = preguntas[currentQuestion];
+  quizDiv.innerHTML = `
+    <div class="pregunta">
+      <p>${pregunta.texto}</p>
+      ${pregunta.opciones
+        .map(
+          (op, idx) => `
+            <label class="${colorClasses[idx]}">
+              <input type="radio" name="respuesta" value="${op.valor}">
+              ${op.texto}
+            </label>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+  nextBtn.classList.add("oculto");
+}
+
+  // Mostrar resultado (sin cambios sustanciales)
   function mostrarResultado() {
     let nivel = "";
     let feedback = "";
@@ -117,18 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
     resultadoDiv.classList.remove("oculto");
   }
 
-  // Manejar selección
+  // Manejar selección: solo mostrar el botón "Siguiente" (no sumar aún)
   quizDiv.addEventListener("change", (e) => {
     if (e.target.name === "respuesta") {
-      puntaje += parseInt(e.target.value);
       nextBtn.classList.remove("oculto");
     }
   });
 
-  // Botón siguiente
+  // Botón siguiente: aquí sí añadimos el valor seleccionado al puntaje
   nextBtn.addEventListener("click", () => {
+    // tomar el valor seleccionado de esta pregunta (si lo hay)
+    const seleccionado = document.querySelector('input[name="respuesta"]:checked');
+    if (seleccionado) {
+      puntaje += parseInt(seleccionado.value, 10);
+    }
+
     currentQuestion++;
-    let progreso = ((currentQuestion) / preguntas.length) * 100;
+    let progreso = (currentQuestion / preguntas.length) * 100;
     progressBar.style.width = progreso + "%";
 
     if (currentQuestion < preguntas.length) {
