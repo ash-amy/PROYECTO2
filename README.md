@@ -27,4 +27,7 @@ Crear una plataforma accesible y amigable que introduzca a los niños en el mund
 
 - Ashley, Perales
 - Hannah, 
-- Melany, 
+- Melany,
+  # imagen:
+  <img width="1350" height="650" alt="image" src="https://github.com/user-attachments/assets/31cace1b-eb30-479c-b9b0-af6cb4c8fcb7" />
+
