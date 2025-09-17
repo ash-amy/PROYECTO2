@@ -218,23 +218,26 @@ body {
   }
 }
 
-/* Aplica animaciones: h1 más pronunciado, h2 más sutil y desfasado */
-.contenedor-textos h1 {
-  animation: flotar-arriba-abajo 4.5s ease-in-out infinite;
-  will-change: transform;
+h1,
+h2 {
+  display: inline-block;
+  animation: mover-rapido 1.5s ease-in-out infinite;
 }
 
-.contenedor-textos h2 {
-  animation: flotar-subtil 5.8s ease-in-out infinite;
-  will-change: transform;
-  /* opcional: un pequeño delay para que no vayan sincronizados */
-  animation-delay: 0.6s;
-}
-
-/* Mejora de rendimiento + respeto a preferencia de movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-  .contenedor-textos h1,
-  .contenedor-textos h2 {
-    animation: none;
+@keyframes mover-rapido {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
